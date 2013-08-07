@@ -5,6 +5,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="language" content="en" /><?php Yii::app()->bootstrap->register(); ?>
 	<title><?php echo CHtml::encode($this->pageTitle); ?></title>
+    <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->theme->baseUrl; ?>/css/styles.css" />
 </head>
 
 <body>
@@ -14,11 +15,12 @@
         array(
             'class'=>'bootstrap.widgets.TbMenu',
             'items'=>array(
-                array('label'=>'Administration', 'url'=>array('/admin')),
+                array('label'=>'Admin', 'url'=>array('/admin')),
                 array('label'=>'Product', 'url'=>array('/admin/product')),
                 array('label'=>'Category', 'url'=>array('/admin/category')),
                 array('label'=>'Feedback', 'url'=>array('/admin/feedback')),
                 array('label'=>'News', 'url'=>array('/admin/news')),
+                array('label'=>'Doc', 'url'=>array('/admin/doc')),
                 array('label'=>'Settings', 'url'=>array('/admin/settings')),
             ),
         ),
@@ -38,7 +40,7 @@
 
 	<?php if(isset($this->breadcrumbs)):?>
 		<?php $this->widget('bootstrap.widgets.TbBreadcrumbs', array(
-            'homeLink'=>CHtml::link('administration', array('/admin')),
+            'homeLink'=>CHtml::link('Admin', array('/admin')),
 			'links'=>$this->breadcrumbs,
 		)); ?><!-- breadcrumbs -->
 	<?php endif?>
