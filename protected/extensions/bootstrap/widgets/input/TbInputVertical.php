@@ -167,4 +167,37 @@ class TbInputVertical extends TbInput
 		echo CHtml::tag('span', $this->htmlOptions, $this->model->{$this->attribute});
 		echo $this->getError().$this->getHint();
 	}
+
+	/**
+	 * Renders a bootstrap wysihtml5 editor.
+	 * @return string the rendered content
+	 */
+	protected function html5Editor()
+	{
+		if (isset($this->htmlOptions['options'])) {
+			$options = $this->htmlOptions['options'];
+			unset($this->htmlOptions['options']);
+		}
+		if (isset($this->htmlOptions['width'])) {
+			$width = $this->htmlOptions['width'];
+			unset($this->htmlOptions['width']);
+		}
+		if (isset($this->htmlOptions['height'])) {
+			$height = $this->htmlOptions['height'];
+			unset($this->htmlOptions['height']);
+		}
+		echo $this->getLabel();
+		$this->widget(
+			'bootstrap.widgets.TbHtml5Editor',
+			array(
+				'model' => $this->model,
+				'attribute' => $this->attribute,
+				'editorOptions' => isset($options) ? $options : array(),
+				'width' => isset($width) ? $width : '100%',
+				'height' => isset($height) ? $height : '400px',
+				'htmlOptions' => $this->htmlOptions
+			)
+		);
+		echo $this->getError() . $this->getHint();
+	}
 }

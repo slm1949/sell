@@ -225,6 +225,22 @@ class TbActiveForm extends CActiveForm
 	}
 
 	/**
+	 *### .html5EditorRow()
+	 *
+	 * Renders a WYSIWYG bootstrap editor
+	 *
+	 * @param CModel $model
+	 * @param string $attribute
+	 * @param array $htmlOptions
+	 *
+	 * @return string
+	 */
+	public function html5EditorRow($model, $attribute, $htmlOptions = array())
+	{
+		return $this->inputRow(TbInput::TYPE_HTML5EDITOR, $model, $attribute, null, $htmlOptions);
+	}
+
+	/**
 	 * Renders a checkbox list for a model attribute.
 	 * This method is a wrapper of {@link CHtml::activeCheckBoxList}.
 	 * Please check {@link CHtml::activeCheckBoxList} for detailed information
