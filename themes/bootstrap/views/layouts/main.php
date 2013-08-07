@@ -20,12 +20,12 @@
             'class'=>'bootstrap.widgets.TbMenu',
             'items'=>array(
                 array('label'=>'Home', 'url'=>array('/site/index')),
-                array('label'=>'About us', 'url'=>array('/doc/about_us')),
+                array('label'=>'About Us', 'url'=>array('/doc/view', 'key'=>'about_us')),
                 array('label'=>'Products', 'url'=>array('/products')),
-                array('label'=>'Sales', 'url'=>array('/doc/sales')),
+                array('label'=>'Sales', 'url'=>array('/doc/view', 'key'=>'sales')),
                 array('label'=>'News', 'url'=>array('/news')),
                 array('label'=>'Feedback', 'url'=>array('/feedback')),
-                array('label'=>'Contact us', 'url'=>array('/site/contact')),
+                array('label'=>'Contact Us', 'url'=>array('/doc/view', 'key'=>'contact_us')),
             ),
         ),
         array(
