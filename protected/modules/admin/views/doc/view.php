@@ -17,7 +17,11 @@ $this->menu=array(
 	'attributes'=>array(
 		'id',
 		'title',
-		'content',
+		array(
+			'name'=>'content',
+			'value'=>$model->content,
+			'type'=>'raw'
+		),
 		'created_at',
 		'updated_at',
 	),
