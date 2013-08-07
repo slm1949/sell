@@ -67,6 +67,8 @@ return array(
 			'username' => 'root',
 			'password' => '',
 			'charset' => 'utf8',
+			'enableProfiling'=>true, 
+			'enableParamLogging'=>true,
 		),
 		
 		'errorHandler'=>array(
@@ -86,6 +88,11 @@ return array(
 					'class'=>'CWebLogRoute',
 				),
 				*/
+	            array(
+	                'class'=>'ext.yii-debug-toolbar.YiiDebugToolbarRoute',
+	                // Access is restricted by default to the localhost
+	                'ipFilters'=>array('127.0.0.1', '192.168.1.*'),
+	            ),
 			),
 		),
 	),
