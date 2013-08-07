@@ -86,4 +86,14 @@ class News extends CActiveRecord
 			'criteria'=>$criteria,
 		));
 	}
+
+	public function behaviors(){
+		return array(
+			'CTimestampBehavior' => array(
+				'class' => 'zii.behaviors.CTimestampBehavior',
+				'createAttribute' => 'created_at',
+				'updateAttribute' => 'updated_at',
+			)
+		);
+	}
 }

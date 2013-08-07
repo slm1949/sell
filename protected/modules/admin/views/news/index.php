@@ -39,7 +39,8 @@ $('.search-form form').submit(function(){
 	'columns'=>array(
 		'id',
 		'title',
-		'content',
+		'created_at',
+		'updated_at',
 		array(
 			'class'=>'bootstrap.widgets.TbButtonColumn',
 		),
