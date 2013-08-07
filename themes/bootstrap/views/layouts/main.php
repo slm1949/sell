@@ -47,7 +47,13 @@
 		)); ?><!-- breadcrumbs -->
 	<?php endif?>
 
-	<?php echo $content; ?>
+    <div class="row">
+        <div class="span2">
+        </div>
+        <div class="span10">
+            <?php echo $content; ?>
+        </div>
+    </div>
 
 	<div class="clear"></div>
 
