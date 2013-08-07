@@ -19,6 +19,7 @@
                 array('label'=>'category', 'url'=>array('/admin/category')),
                 array('label'=>'feedback', 'url'=>array('/admin/feedback')),
                 array('label'=>'news', 'url'=>array('/admin/news')),
+                array('label'=>'Settings', 'url'=>array('/admin/settings')),
             ),
         ),
 
