@@ -14,11 +14,11 @@
         array(
             'class'=>'bootstrap.widgets.TbMenu',
             'items'=>array(
-                array('label'=>'administration', 'url'=>array('/admin')),
-                array('label'=>'product', 'url'=>array('/admin/product')),
-                array('label'=>'category', 'url'=>array('/admin/category')),
-                array('label'=>'feedback', 'url'=>array('/admin/feedback')),
-                array('label'=>'news', 'url'=>array('/admin/news')),
+                array('label'=>'Administration', 'url'=>array('/admin')),
+                array('label'=>'Product', 'url'=>array('/admin/product')),
+                array('label'=>'Category', 'url'=>array('/admin/category')),
+                array('label'=>'Feedback', 'url'=>array('/admin/feedback')),
+                array('label'=>'News', 'url'=>array('/admin/news')),
                 array('label'=>'Settings', 'url'=>array('/admin/settings')),
             ),
         ),
