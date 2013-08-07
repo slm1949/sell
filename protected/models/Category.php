@@ -38,7 +38,7 @@ class Category extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('name, level', 'required'),
+			array('name', 'required'),
 			array('parent_id, level', 'numerical', 'integerOnly'=>true),
 			array('name, description', 'length', 'max'=>255),
 			// The following rule is used by search().
@@ -55,6 +55,7 @@ class Category extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
+            'parent'=>array(self::BELONGS_TO, 'Category', 'parent_id'),
 		);
 	}
 
