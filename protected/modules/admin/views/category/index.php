@@ -39,9 +39,10 @@ $('.search-form form').submit(function(){
 	'columns'=>array(
 		'id',
 		'name',
-		'parent_id',
-		'level',
-		'description',
+		array(
+			'header'=>'Parent',
+			'name'=>'parent.name'
+		),
 		array(
 			'class'=>'bootstrap.widgets.TbButtonColumn',
 		),
