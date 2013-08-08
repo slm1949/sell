@@ -15,7 +15,7 @@ $this->widget('bootstrap.widgets.TbGridView',array(
     'enableSorting'=>false,
     'columns'=>array(
         array(
-            'header'=>'标题',
+            'header'=>'Title',
             'labelExpression'=>'$data->title',
             'urlExpression'=>'array("news/view", "id"=>$data->id)',
             'class'=>'zii.widgets.grid.CLinkColumn',
@@ -23,7 +23,10 @@ $this->widget('bootstrap.widgets.TbGridView',array(
                 'class'=>'span6'
             )
         ),
-        'created_at',
+        array(
+            'name'=>'created_at',
+            'header'=>''
+        )
     ),
 )); 
 ?>
