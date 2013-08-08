@@ -61,6 +61,7 @@
 
     <div class="row">
         <div class="span2">
+            <?php $this->widget('Categories'); ?>
         </div>
         <div class="span10">
             <?php echo $content; ?>
