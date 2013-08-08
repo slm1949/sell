@@ -4,18 +4,17 @@ class NewsController extends Controller
 {
     public function actionIndex()
     {
-        $model=News::model()->findAll();
-        if($model===null){
-            throw new CHttpException(404,'The requested page does not exist.');
-        }
-        else{
-            foreach ($model as $value) {
-                $news[] = $value->attributes;
-            }
-            $this->render('index',array(
-                'news'=>$news,
-            ));
-        }   
+        $model=new News('search');
+
+        $criteria=new CDbCriteria;
+        $criteria->order='id DESC';
+        $news=new CActiveDataProvider($model, array(
+            'criteria'=>$criteria,
+        ));
+
+        $this->render('index',array(
+            'news'=>$news,
+        ));
     }
 
     public function actionView($id)
