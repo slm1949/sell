@@ -5,11 +5,11 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="language" content="en" />
 
-    <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->theme->baseUrl; ?>/css/styles.css" />
-
 	<title><?php echo CHtml::encode($this->settings['site_name']); ?></title>
 
 	<?php Yii::app()->bootstrap->register(); ?>
+    <?php Yii::app()->clientScript->registerScriptFile('/js/common.js'); ?>
+    <?php Yii::app()->clientScript->registerCssFile(Yii::app()->theme->baseUrl."/css/styles.css");?>
 </head>
 
 <body>
