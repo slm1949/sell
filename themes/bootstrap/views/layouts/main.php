@@ -21,7 +21,7 @@
             'items'=>array(
                 array('label'=>'Home', 'url'=>array('/site/index')),
                 array('label'=>'About Us', 'url'=>array('/doc/view', 'key'=>'about_us')),
-                array('label'=>'Products', 'url'=>array('/products')),
+                array('label'=>'Products', 'url'=>array('/category/index')),
                 array('label'=>'Sales', 'url'=>array('/doc/view', 'key'=>'sales')),
                 array('label'=>'News', 'url'=>array('/news')),
                 array('label'=>'Feedback', 'url'=>array('/feedback')),

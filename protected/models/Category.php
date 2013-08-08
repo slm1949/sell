@@ -56,6 +56,7 @@ class Category extends CActiveRecord
 		// class name for the relations automatically generated below.
 		return array(
             'parent'=>array(self::BELONGS_TO, 'Category', 'parent_id'),
+            'children'=>array(self::HAS_MANY, 'Category', 'parent_id'),
 		);
 	}
 
