@@ -4,10 +4,9 @@ $this->breadcrumbs=array(
 	$model->title,
 );
 ?>
-<?php $this->widget('bootstrap.widgets.TbDetailView',array(
-	'data'=>$model,
-	'attributes'=>array(
-		'title',
-		'content',
-	),
-)); ?>
+
+<h1><?php echo $model->title; ?></h1>
+
+<div>
+    <?php echo $model->content; ?>
+</div>
