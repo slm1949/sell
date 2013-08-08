@@ -27,15 +27,7 @@
                 array('label'=>'Feedback', 'url'=>array('/feedback')),
                 array('label'=>'Contact Us', 'url'=>array('/doc/view', 'key'=>'contact_us')),
             ),
-        ),
-        array(
-            'class'=>'bootstrap.widgets.TbMenu',
-            'htmlOptions'=>array('class'=>'pull-right'),
-            'items'=>array(
-                array('label'=>'login', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
-                array('label'=>'logout ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest)
-            ),
-        ),
+        )
     ),
 )); ?>
 
