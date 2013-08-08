@@ -7,7 +7,7 @@
 
     <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->theme->baseUrl; ?>/css/styles.css" />
 
-	<title><?php echo CHtml::encode($this->pageTitle); ?></title>
+	<title><?php echo CHtml::encode($this->settings['site_name']); ?></title>
 
 	<?php Yii::app()->bootstrap->register(); ?>
 </head>
@@ -15,6 +15,8 @@
 <body>
 
 <?php $this->widget('bootstrap.widgets.TbNavbar',array(
+    'brand'=>$this->settings['site_name'],
+    'collapse'=>true,
     'items'=>array(
         array(
             'class'=>'bootstrap.widgets.TbMenu',
