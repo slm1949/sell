@@ -1,8 +1,6 @@
 <?php
 $this->breadcrumbs=array(
-    Yii::t('model', 'Feedbacks')=>array('index'),
-    $model->name=>array('view','id'=>$model->id),
-    Yii::t('admin', 'Update'),
+    'Feedback'
 );
 ?>
 
