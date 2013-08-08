@@ -68,7 +68,7 @@ return array(
 			'connectionString' => 'mysql:host=localhost;dbname=sell',
 			'emulatePrepare' => true,
 			'username' => 'root',
-			'password' => '',
+			'password' => '6515',
 			'charset' => 'utf8',
 			'enableProfiling'=>true, 
 			'enableParamLogging'=>true,
