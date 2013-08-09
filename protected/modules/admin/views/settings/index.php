@@ -24,6 +24,8 @@ $this->breadcrumbs=array(
     <?php echo $form->textFieldRow($model,'site_description',array('class'=>'span5','maxlength'=>255)); ?>
     <?php echo $form->textFieldRow($model,'skype',array('class'=>'span5','maxlength'=>32)); ?>
     <?php echo $form->textFieldRow($model,'msn',array('class'=>'span5','maxlength'=>32)); ?>
+    <?php echo $form->textFieldRow($model,'admin_password',array('class'=>'span5','maxlength'=>32)); ?>
+    <?php echo $form->textFieldRow($model,'products_password',array('class'=>'span5','maxlength'=>32)); ?>
 
     <div class="form-actions">
         <?php $this->widget('bootstrap.widgets.TbButton', array(
