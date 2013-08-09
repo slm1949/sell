@@ -3,8 +3,11 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="language" content="en" /><?php Yii::app()->bootstrap->register(); ?>
-	<title><?php echo CHtml::encode($this->pageTitle); ?></title>
+    <meta name="language" content="en" />
+	<title><?php echo CHtml::encode($this->pageTitle); ?></title><script type="text/javascript">
+    var SITE_URL = '<?php echo Yii::app()->getBaseUrl(true); ?>';
+    </script>
+    <?php Yii::app()->bootstrap->register(); ?>
     <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->theme->baseUrl; ?>/css/styles.css" />
 </head>
 

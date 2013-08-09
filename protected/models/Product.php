@@ -14,6 +14,8 @@
  */
 class Product extends CActiveRecord
 {
+	private $oldAttributes = array();
+
 	/**
 	 * Returns the static model of the specified AR class.
 	 * @param string $className active record class name.
@@ -99,4 +101,34 @@ class Product extends CActiveRecord
 			'criteria'=>$criteria,
 		));
 	}
+	
+	protected function afterSave()
+	{
+		if(!isset($this->oldAttributes['image']) || $this->image != $this->oldAttributes['image']){
+			$filePath = Yii::getPathOfAlias('webroot').'/upload/tmp/'.$this->image;
+			$targetPath = Yii::getPathOfAlias('webroot').'/upload/images/product/originals/'.$this->image;
+
+			@ mkdir(Yii::getPathOfAlias('webroot').'/upload/images/product/originals/', 0755, true);
+			copy($filePath, $targetPath);
+
+			@ unlink(Yii::getPathOfAlias('webroot').'/upload/images/product/originals/'.$this->oldAttributes['image']);
+			@ unlink(Yii::getPathOfAlias('webroot').'/upload/images/product/thumb/'.$this->oldAttributes['image']);
+			@ unlink(Yii::getPathOfAlias('webroot').'/upload/images/product/tiny/'.$this->oldAttributes['image']);
+			@ unlink(Yii::getPathOfAlias('webroot').'/upload/images/product/big/'.$this->oldAttributes['image']);
+		}
+	}
+
+	protected function afterFind()
+    {
+        $this->oldAttributes = $this->getAttributes();
+
+        return parent::afterFind();
+    }
+
+    protected function afterDelete(){
+    	@ unlink(Yii::getPathOfAlias('webroot').'/upload/images/product/originals/'.$this->oldAttributes['image']);
+		@ unlink(Yii::getPathOfAlias('webroot').'/upload/images/product/thumb/'.$this->oldAttributes['image']);
+		@ unlink(Yii::getPathOfAlias('webroot').'/upload/images/product/tiny/'.$this->oldAttributes['image']);
+		@ unlink(Yii::getPathOfAlias('webroot').'/upload/images/product/big/'.$this->oldAttributes['image']);
+    }
 }

@@ -18,7 +18,8 @@ return array(
 	'import'=>array(
 		'application.models.*',
 		'application.components.*',
-		'application.widgets.*'
+		'application.widgets.*',
+		'application.helpers.*'
 	),
 
 	'modules'=>array(
@@ -68,7 +69,7 @@ return array(
 			'connectionString' => 'mysql:host=localhost;dbname=sell',
 			'emulatePrepare' => true,
 			'username' => 'root',
-			'password' => '6515',
+			'password' => '',
 			'charset' => 'utf8',
 			'enableProfiling'=>true, 
 			'enableParamLogging'=>true,
@@ -111,6 +112,30 @@ return array(
 	        'createTable'       => true,
 	        'dbEngine'      => 'InnoDB',
 	    ),
+	    'image'=>array(
+          'class'=>'application.extensions.image.CImageComponent',
+            // GD or ImageMagick
+            'driver'=>'GD'
+        ),
+        'widgetFactory'=>array(
+            'widgets'=>array(
+                'SAImageDisplayer'=>array(
+                	'baseDir' => 'upload/images',
+                    'sizes' =>array(
+					    'tiny' => array('width' => 50, 'height' => 50),
+					    'big' => array('width' => 400, 'height' => 400),
+					    'thumb' => array('width' => 100, 'height' => 100),
+					),
+					'groups' => array(
+				    	'product' => array(
+						    'tiny' => array('width' => 50, 'height' => 50),
+						    'big' => array('width' => 400, 'height' => 400),
+						    'thumb' => array('width' => 100, 'height' => 100),
+				    	),
+					),
+                ),
+            ),
+        ),
 	),
 
 	// application-level parameters that can be accessed

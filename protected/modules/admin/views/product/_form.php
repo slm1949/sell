@@ -1,3 +1,7 @@
+<?php Yii::app()->clientScript->registerCssFile(Yii::app()->baseUrl . "/css/uploadify.css"); ?>
+<?php Yii::app()->clientScript->registerScriptFile(Yii::app()->baseUrl . "/js/jquery.uploadify.min.js"); ?>
+<?php Yii::app()->clientScript->registerScriptFile(Yii::app()->baseUrl . "/js/admin/product.js"); ?>
+
 <?php $form=$this->beginWidget('bootstrap.widgets.TbActiveForm',array(
 	'id'=>'product-form',
     'type'=>'horizontal',
@@ -13,6 +17,14 @@
 
 	<?php echo $form->errorSummary($model); ?>
 
+	<?php echo $form->textFieldRow($model,'image',array('class'=>'span5','maxlength'=>255,'readonly'=>'true')); ?>
+	<div class="control-group ">
+		<label class="control-label"></label>
+		<div class="controls">
+			<div id="image_upload"></div>
+		</div>
+	</div>
+
 	<?php echo $form->textFieldRow($model,'name',array('class'=>'span5','maxlength'=>255)); ?>
 
 	<?php echo $form->textFieldRow($model,'model',array('class'=>'span5','maxlength'=>255)); ?>
@@ -20,8 +32,6 @@
 	<?php echo $form->textFieldRow($model,'category_id',array('class'=>'span5')); ?>
 
 	<?php echo $form->textFieldRow($model,'description',array('class'=>'span5','maxlength'=>255)); ?>
-
-	<?php echo $form->textFieldRow($model,'image',array('class'=>'span5','maxlength'=>255)); ?>
 
 	<?php echo $form->textFieldRow($model,'else',array('class'=>'span5','maxlength'=>255)); ?>
 

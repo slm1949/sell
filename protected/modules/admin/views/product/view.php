@@ -16,11 +16,19 @@ $this->menu=array(
 	'data'=>$model,
 	'attributes'=>array(
 		'id',
+		array(
+			'name'=>'image',
+			'value'=>$this->widget('ext.SAImageDisplayer', array(
+                'image' => $model->image,
+                'group' => 'product',
+                'size' => 'big',
+            ), true),
+            'type'=>'raw'
+		),
 		'name',
 		'model',
 		'category_id',
 		'description',
-		'image',
 		'else',
 	),
 )); ?>
