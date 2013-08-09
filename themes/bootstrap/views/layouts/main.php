@@ -25,8 +25,8 @@
                 array('label'=>'About Us', 'url'=>array('/doc/view', 'key'=>'about_us')),
                 array('label'=>'Products', 'url'=>array('/category/index')),
                 array('label'=>'Sales', 'url'=>array('/doc/view', 'key'=>'sales')),
-                array('label'=>'News', 'url'=>array('/news')),
-                array('label'=>'Feedback', 'url'=>array('/feedback')),
+                array('label'=>'News', 'url'=>array('/news/index')),
+                array('label'=>'Feedback', 'url'=>array('/feedback/index')),
                 array('label'=>'Contact Us', 'url'=>array('/doc/view', 'key'=>'contact_us')),
             ),
         )
