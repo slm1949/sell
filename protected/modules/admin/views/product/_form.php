@@ -25,11 +25,11 @@
 		</div>
 	</div>
 
+	<?php echo $form->dropDownListRow($model,'category_id', Category::model()->toOptions()); ?>
+
 	<?php echo $form->textFieldRow($model,'name',array('class'=>'span5','maxlength'=>255)); ?>
 
 	<?php echo $form->textFieldRow($model,'model',array('class'=>'span5','maxlength'=>255)); ?>
-
-	<?php echo $form->textFieldRow($model,'category_id',array('class'=>'span5')); ?>
 
 	<?php echo $form->textFieldRow($model,'description',array('class'=>'span5','maxlength'=>255)); ?>
 

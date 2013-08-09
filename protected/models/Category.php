@@ -95,4 +95,19 @@ class Category extends CActiveRecord
 			'criteria'=>$criteria,
 		));
 	}
+
+	public function toOptions()
+	{
+		$categories = Category::model()->findAllByAttributes(array('parent_id'=>null));
+		$optgroups = array();
+		foreach ($categories as $category) {
+			$options = array();
+			foreach ($category->children as $child) {
+				$options[$child->id] = $child->name;
+			}
+			$optgroups[$category->name] = $options;
+		}
+
+		return $optgroups;
+	}
 }
