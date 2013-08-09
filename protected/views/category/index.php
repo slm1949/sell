@@ -13,7 +13,7 @@ $this->breadcrumbs=array(
         <?php if($category->children){ ?>
         <ul class="clearfix">
             <?php foreach ($category->children as $child) { ?>
-            <li class="span2"><?php echo CHtml::link($child->name, array('category/view', 'id'=>$child->id)); ?></li>
+            <li class="span2"><?php echo CHtml::link($child->name, array('product/category', 'id'=>$child->id)); ?></li>
             <?php } ?>
         </ul>
         <?php } ?>
