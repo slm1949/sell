@@ -80,6 +80,8 @@
 	<div class="clear"></div>
 
 	<div id="footer">
+        <?php if($this->settings['footer']){ echo $this->settings['footer']; } ?>
+        <br/>
 		Copyright &copy; <?php echo date('Y'); ?> by <?php echo $this->settings['site_name'] ?>.<br/>
 		All Rights Reserved.<br/>
 	</div><!-- footer -->

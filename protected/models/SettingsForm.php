@@ -13,6 +13,7 @@ class SettingsForm extends CFormModel
     public $msn;
     public $admin_password;
     public $products_password;
+    public $footer;
 
     /**
      * Declares the validation rules.
@@ -23,8 +24,8 @@ class SettingsForm extends CFormModel
     {
         return array(
             // username and password are required
-            array('site_name, site_description', 'required'),
-            array('skype, msn, admin_password, products_password', 'safe'),
+            array('site_name, site_description, admin_password', 'required'),
+            array('skype, msn, products_password, footer', 'safe'),
         );
     }
 
