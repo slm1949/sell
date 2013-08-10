@@ -29,4 +29,14 @@ class ProductController extends Controller
             'category'=>$category
         ));
     }
+
+    public function actionView($id){
+        $product = Product::model()->findByPk($id);
+        if($product===null)
+            throw new CHttpException(404,'The requested page does not exist.');
+
+        $this->render('view', array(
+            'product'=>$product
+        ));
+    }
 }
