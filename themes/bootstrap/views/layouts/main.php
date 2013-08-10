@@ -56,6 +56,21 @@
     <div class="row">
         <div class="span2">
             <?php $this->widget('Categories'); ?>
+            <h2></h2>
+            <div>
+                <p>
+                    <?php 
+                    if($this->settings['msn']){
+                        $image = CHtml::image('/images/msn.gif');
+                        echo CHtml::link($image, 'msnim:chat?contact='.$this->settings['msn']);
+                    }
+                    if($this->settings['skype']){
+                        $image = CHtml::image('/images/skype.gif');
+                        echo CHtml::link($image, 'skype:'.$this->settings['skype'].'?call');
+                    }
+                    ?>
+                </p>
+            </div>
         </div>
         <div class="span10">
             <?php echo $content; ?>
