@@ -23,7 +23,7 @@ $this->breadcrumbs=array(
 
     <?php echo $form->textFieldRow($model,'name',array('class'=>'span5','maxlength'=>255)); ?>
 
-    <?php echo $form->textFieldRow($model,'sex',array('class'=>'span5','maxlength'=>10)); ?>
+    <?php echo $form->radioButtonListRow($model,'sex', array('Male', 'Female')); ?>
 
     <?php echo $form->textFieldRow($model,'email',array('class'=>'span5','maxlength'=>255)); ?>
 
@@ -35,7 +35,7 @@ $this->breadcrumbs=array(
 
     <?php echo $form->textFieldRow($model,'title',array('class'=>'span5','maxlength'=>255)); ?>
 
-    <?php echo $form->textAreaRow($model,'content',array('rows'=>6, 'cols'=>50, 'class'=>'span8')); ?>
+    <?php echo $form->textAreaRow($model,'content',array('rows'=>10, 'cols'=>50, 'class'=>'span8')); ?>
 
     <div class="form-actions">
         <?php $this->widget('bootstrap.widgets.TbButton', array(
