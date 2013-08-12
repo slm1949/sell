@@ -28,7 +28,10 @@ $this->menu=array(
 		'name',
 		'model',
 		'category_id',
-		'description',
+        array(
+            'name'=>'description',
+            'type'=>'raw'
+        ),
 		'else',
 	),
 )); ?>

@@ -44,7 +44,8 @@ class Product extends CActiveRecord
 		return array(
 			array('name, model, image, category_id', 'required'),
 			array('category_id', 'numerical', 'integerOnly'=>true),
-			array('name, model, description, image, else', 'length', 'max'=>255),
+			array('name, model, image, else', 'length', 'max'=>255),
+			array('description', 'length', 'max'=>60000),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
 			array('id, name, model, category_id, description, image, else', 'safe', 'on'=>'search'),
