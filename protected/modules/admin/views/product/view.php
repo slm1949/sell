@@ -31,7 +31,6 @@ $this->menu=array(
         array(
             'name'=>'description',
             'type'=>'raw'
-        ),
-		'else',
+        )
 	),
 )); ?>

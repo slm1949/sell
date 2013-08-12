@@ -42,8 +42,6 @@
 
 	<?php echo $form->html5EditorRow($model,'description'); ?>
 
-	<?php echo $form->textFieldRow($model,'else',array('class'=>'span5','maxlength'=>255)); ?>
-
 	<div class="form-actions">
 		<?php $this->widget('bootstrap.widgets.TbButton', array(
 			'buttonType'=>'submit',

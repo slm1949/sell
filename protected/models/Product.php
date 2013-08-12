@@ -44,7 +44,7 @@ class Product extends CActiveRecord
 		return array(
 			array('name, model, image, category_id', 'required'),
 			array('category_id', 'numerical', 'integerOnly'=>true),
-			array('name, model, image, else', 'length', 'max'=>255),
+			array('name, model, image', 'length', 'max'=>255),
 			array('description', 'length', 'max'=>60000),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
@@ -76,7 +76,6 @@ class Product extends CActiveRecord
 			'category_id' => 'Category',
 			'description' => 'Description',
 			'image' => 'Image',
-			'else' => 'Else',
 		);
 	}
 
@@ -97,7 +96,6 @@ class Product extends CActiveRecord
 		$criteria->compare('category_id',$this->category_id);
 		$criteria->compare('description',$this->description,true);
 		$criteria->compare('image',$this->image,true);
-		$criteria->compare('else',$this->else,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
