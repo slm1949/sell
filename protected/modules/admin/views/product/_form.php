@@ -40,7 +40,7 @@
 
 	<?php echo $form->textFieldRow($model,'model',array('class'=>'span5','maxlength'=>255)); ?>
 
-	<?php echo $form->textFieldRow($model,'description',array('class'=>'span5','maxlength'=>255)); ?>
+	<?php echo $form->html5EditorRow($model,'description',array('class'=>'span5','maxlength'=>255)); ?>
 
 	<?php echo $form->textFieldRow($model,'else',array('class'=>'span5','maxlength'=>255)); ?>
 
