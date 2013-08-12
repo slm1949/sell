@@ -6,9 +6,37 @@ class ProductController extends Controller
     {
         return array(
             array(
-                'application.filters.ProductLoginFilter + category, view'
+                'application.filters.ProductLoginFilter + category, search, view'
             )
         );
+    }
+
+    public function actionSearch($keyword)
+    {
+        if($keyword===null)
+            throw new CHttpException(404,'The requested page does not exist.');
+
+        $criteria = new CDbCriteria();
+        $criteria->addCondition("name LIKE :keyword", 'OR');
+        $criteria->addCondition("description LIKE :keyword", 'OR');
+        $criteria->params = array(
+            'keyword'=>'%'.$keyword.'%'
+        );
+        $criteria->order = 'id DESC';
+
+        $item_count = Product::model()->count($criteria);
+        $pages = new CPagination($item_count);
+        $pages->setPageSize(30);
+        $pages->applyLimit($criteria);
+
+        $this->render('search', array(
+            'model'=> Product::model()->findAll($criteria),
+            'item_count'=>$item_count,
+            'page_size'=>20,
+            'items_count'=>$item_count,
+            'pages'=>$pages,
+            'keyword'=>$keyword
+        ));
     }
 
     public function actionCategory($id)

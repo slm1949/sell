@@ -28,7 +28,8 @@
                 array('label'=>'About Us', 'url'=>array('/doc/view', 'key'=>'about_us')),
                 array('label'=>'Contact Us', 'url'=>array('/doc/view', 'key'=>'contact_us')),
             ),
-        )
+        ),
+        '<form class="navbar-search pull-right" action="/product/search"><input name="keyword" type="text" class="search-query span2" placeholder="Search Product"></form>',
     ),
 )); ?>
 
