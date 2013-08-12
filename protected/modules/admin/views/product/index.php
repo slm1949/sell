@@ -40,12 +40,6 @@ $('.search-form form').submit(function(){
 		'id',
 		'name',
 		'model',
-		'category_id',
-		'description',
-		'image',
-		/*
-		'else',
-		*/
 		array(
 			'class'=>'bootstrap.widgets.TbButtonColumn',
 		),
