@@ -14,6 +14,7 @@
 <body>
 
 <?php $this->widget('bootstrap.widgets.TbNavbar',array(
+    'brand'=>'Back to Index',
     'items'=>array(
         array(
             'class'=>'bootstrap.widgets.TbMenu',
