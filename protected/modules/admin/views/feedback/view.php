@@ -5,8 +5,6 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>Yii::t('admin', 'Update {model}', array('{model}'=>Yii::t('model', 'Feedback'))),'url'=>array('update','id'=>$model->id)),
-	array('label'=>Yii::t('admin', 'Delete {model}', array('{model}'=>Yii::t('model', 'Feedback'))),'url'=>'#','htmlOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>Yii::t('admin', 'Are you sure you want to delete this item?'))),
 );
 ?>
 

@@ -42,6 +42,7 @@ $('.search-form form').submit(function(){
 		'created_at',
 		array(
 			'class'=>'bootstrap.widgets.TbButtonColumn',
+    		'template'=>'{view}',
 		),
 	),
 )); ?>
