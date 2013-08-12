@@ -20,7 +20,7 @@ $this->widget('bootstrap.widgets.TbGridView',array(
             'urlExpression'=>'array("news/view", "id"=>$data->id)',
             'class'=>'zii.widgets.grid.CLinkColumn',
             'headerHtmlOptions'=>array(
-                'class'=>'span6'
+                'class'=>'span8'
             )
         ),
         array(
