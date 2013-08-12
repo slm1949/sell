@@ -21,7 +21,6 @@
         array(
             'class'=>'bootstrap.widgets.TbMenu',
             'items'=>array(
-                array('label'=>'Home', 'url'=>array('/site/index')),
                 array('label'=>'About Us', 'url'=>array('/doc/view', 'key'=>'about_us')),
                 array('label'=>'Products', 'url'=>array('/category/index')),
                 array('label'=>'Sales', 'url'=>array('/doc/view', 'key'=>'sales')),
@@ -54,25 +53,30 @@
     ?>
 
     <div class="row">
-        <div class="span2">
-            <?php $this->widget('Categories'); ?>
-            <h2></h2>
-            <div>
-                <p>
-                    <?php 
-                    if($this->settings['msn']){
-                        $image = CHtml::image('/images/msn.gif');
-                        echo CHtml::link($image, 'msnim:chat?contact='.$this->settings['msn']);
-                    }
-                    if($this->settings['skype']){
-                        $image = CHtml::image('/images/skype.gif');
-                        echo CHtml::link($image, 'skype:'.$this->settings['skype'].'?call');
-                    }
-                    ?>
-                </p>
+        <div class="span3">
+            <div class="well">
+                <?php $this->widget('Categories'); ?>
+            </div>
+
+            <div class="well">
+                <h2>Contact Us</h2>
+                <div>
+                    <p>
+                        <?php 
+                        if($this->settings['msn']){
+                            $image = CHtml::image('/images/msn.gif');
+                            echo CHtml::link($image, 'msnim:chat?contact='.$this->settings['msn']);
+                        }
+                        if($this->settings['skype']){
+                            $image = CHtml::image('/images/skype.gif');
+                            echo CHtml::link($image, 'skype:'.$this->settings['skype'].'?call');
+                        }
+                        ?>
+                    </p>
+                </div>
             </div>
         </div>
-        <div class="span10">
+        <div class="span9">
             <?php echo $content; ?>
         </div>
     </div>
