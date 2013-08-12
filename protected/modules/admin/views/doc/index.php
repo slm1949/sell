@@ -4,7 +4,7 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>Yii::t('admin', 'Create {model}', array('{model}'=>Yii::t('model', 'Doc'))),'url'=>array('create')),
+	// array('label'=>Yii::t('admin', 'Create {model}', array('{model}'=>Yii::t('model', 'Doc'))),'url'=>array('create')),
 );
 
 Yii::app()->clientScript->registerScript('search', "
@@ -44,6 +44,7 @@ $('.search-form form').submit(function(){
 		'updated_at',
 		array(
 			'class'=>'bootstrap.widgets.TbButtonColumn',
+    		'template'=>'{view}{update}'
 		),
 	),
 )); ?>
