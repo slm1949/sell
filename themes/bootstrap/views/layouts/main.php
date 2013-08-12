@@ -61,6 +61,7 @@
             <div class="well">
                 <h2>Contact Us</h2>
                 <div>
+                    <?php echo $this->settings['contact_us'] ?>
                     <p>
                         <?php 
                         if($this->settings['msn']){

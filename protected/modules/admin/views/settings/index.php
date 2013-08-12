@@ -26,7 +26,8 @@ $this->breadcrumbs=array(
     <?php echo $form->textFieldRow($model,'msn',array('class'=>'span5','maxlength'=>32)); ?>
     <?php echo $form->textFieldRow($model,'admin_password',array('class'=>'span5','maxlength'=>32)); ?>
     <?php echo $form->textFieldRow($model,'products_password',array('class'=>'span5','maxlength'=>32)); ?>
-    <?php echo $form->html5EditorRow($model,'footer',array('class'=>'span5','maxlength'=>32)); ?>
+    <?php echo $form->html5EditorRow($model,'footer'); ?>
+    <?php echo $form->html5EditorRow($model,'contact_us'); ?>
 
     <div class="form-actions">
         <?php $this->widget('bootstrap.widgets.TbButton', array(
