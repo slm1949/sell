@@ -48,7 +48,7 @@ class Feedback extends CActiveRecord
 			array('content', 'safe'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, name, sex, email, tel, fax, address, title, content', 'safe', 'on'=>'search'),
+			array('id, name, sex, email, tel, fax, address, title, content, created_at', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -101,9 +101,19 @@ class Feedback extends CActiveRecord
 		$criteria->compare('address',$this->address,true);
 		$criteria->compare('title',$this->title,true);
 		$criteria->compare('content',$this->content,true);
+		$criteria->compare('created_at',$this->content,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
 		));
+	}
+
+	public function behaviors(){
+		return array(
+			'CTimestampBehavior' => array(
+				'class' => 'zii.behaviors.CTimestampBehavior',
+				'createAttribute' => 'created_at',
+			)
+		);
 	}
 }

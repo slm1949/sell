@@ -38,12 +38,8 @@ $('.search-form form').submit(function(){
 		'sex',
 		'email',
 		'tel',
-		'fax',
-		/*
-		'address',
 		'title',
-		'content',
-		*/
+		'created_at',
 		array(
 			'class'=>'bootstrap.widgets.TbButtonColumn',
 		),

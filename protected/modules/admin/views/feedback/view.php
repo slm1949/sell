@@ -24,5 +24,6 @@ $this->menu=array(
 		'address',
 		'title',
 		'content',
+		'created_at'
 	),
 )); ?>
