@@ -2,6 +2,15 @@
 class ProductController extends Controller
 {
 
+    public function filters()
+    {
+        return array(
+            array(
+                'application.filters.ProductLoginFilter + category, view'
+            )
+        );
+    }
+
     public function actionCategory($id)
     {
         $category = Category::model()->findByPk($id);
@@ -37,6 +46,30 @@ class ProductController extends Controller
 
         $this->render('view', array(
             'product'=>$product
+        ));
+    }
+
+    public function actionLogin()
+    {
+        $model=new ProductLoginForm;
+
+        if(isset($_POST['ProductLoginForm']))
+        {
+            $model->attributes=$_POST['ProductLoginForm'];
+
+            if($model->login())
+            {
+                $session = Yii::app()->session;
+                $session['product_logined']=true;
+                Yii::app()->user->setFlash('success', 'Login successfully');
+                $this->redirect(array('category/index'));
+            }else{
+                Yii::app()->user->setFlash('error', 'Login failed');
+            }
+        }
+
+        $this->render('login',array(
+            'model'=>$model,
         ));
     }
 }
