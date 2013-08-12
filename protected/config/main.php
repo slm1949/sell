@@ -129,8 +129,8 @@ return array(
 					'groups' => array(
 				    	'product' => array(
 						    'tiny' => array('width' => 50, 'height' => 50),
-						    'big' => array('width' => 400, 'height' => 400),
-						    'thumb' => array('width' => 100, 'height' => 100),
+						    'big' => array('width' => 600, 'height' => 600),
+						    'thumb' => array('width' =>250, 'height' => 250),
 				    	),
 					),
                 ),
