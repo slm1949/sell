@@ -12,6 +12,7 @@ class SettingsForm extends CFormModel
     public $skype;
     public $msn;
     public $admin_password;
+    public $confirm_admin_password;
     public $products_password;
     public $footer;
     public $contact_us;
@@ -25,8 +26,9 @@ class SettingsForm extends CFormModel
     {
         return array(
             // username and password are required
-            array('site_name, site_description, admin_password', 'required'),
-            array('skype, msn, products_password, footer, contact_us', 'safe'),
+            array('site_name, site_description, admin_password, confirm_admin_password', 'required'),
+            array('skype, msn, products_password, confirm_admin_password, footer, contact_us', 'safe'),
+            array('confirm_admin_password', 'compare', 'allowEmpty'=>false, 'compareAttribute'=>'admin_password', 'message'=>'confirm admin password is not compare'),
         );
     }
 
