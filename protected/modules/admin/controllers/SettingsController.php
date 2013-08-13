@@ -39,6 +39,8 @@ class SettingsController extends Controller
 
         if(isset($_POST['SettingsForm']))
         {
+            $_POST['SettingsForm']['admin_password']=md5($_POST['SettingsForm']['admin_password']);
+            $_POST['SettingsForm']['products_password']=md5($_POST['SettingsForm']['products_password']);
             $model->attributes=$_POST['SettingsForm'];
             if($model->validate())
             {
