@@ -10,12 +10,14 @@ $this->breadcrumbs=array(
 <div>
     <p>
     <?php
-    $this->widget('ext.SAImageDisplayer', array(
-        'image' => $product->image,
-        'group' => 'product',
-        'size' => 'big',
-        'title' => $product->name
-    ));
+    if($product->imageExists){
+        $this->widget('ext.SAImageDisplayer', array(
+            'image' => $product->image,
+            'group' => 'product',
+            'size' => 'big',
+            'title' => $product->name
+        ));
+    }
     ?>
     </p>
 

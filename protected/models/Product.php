@@ -131,4 +131,10 @@ class Product extends CActiveRecord
 		@ unlink(Yii::getPathOfAlias('webroot').'/upload/images/product/tiny/'.$this->oldAttributes['image']);
 		@ unlink(Yii::getPathOfAlias('webroot').'/upload/images/product/big/'.$this->oldAttributes['image']);
     }
+
+    public function getImageExists()
+    {
+    	$image = Yii::getPathOfAlias('webroot').'/upload/images/product/originals/'.$this->image;
+    	return file_exists($image);
+    }
 }

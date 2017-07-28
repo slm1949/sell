@@ -18,11 +18,11 @@ $this->menu=array(
 		'id',
 		array(
 			'name'=>'image',
-			'value'=>$this->widget('ext.SAImageDisplayer', array(
+			'value'=> $model->imageExists ? $this->widget('ext.SAImageDisplayer', array(
                 'image' => $model->image,
                 'group' => 'product',
                 'size' => 'big',
-            ), true),
+            ), true) : null,
             'type'=>'raw'
 		),
 		'name',

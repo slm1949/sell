@@ -23,7 +23,7 @@
 		<div class="controls">
 			<div id="image_upload"></div>
 			<?php
-			if($model->image){
+			if($model->image && $model->imageExists){
 				$this->widget('ext.SAImageDisplayer', array(
 	                'image' => $model->image,
 	                'group' => 'product',

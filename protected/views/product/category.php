@@ -11,16 +11,18 @@ $this->breadcrumbs=array(
     <?php foreach ($model as $key => $product) { ?>
     <li class="span3">
         <?php
-        $image = $this->widget('ext.SAImageDisplayer', array(
-                'image' => $product->image,
-                'group' => 'product',
-                'size' => 'thumb',
-                'title' => $product->name
-            ), true);
+        if($product->imageExists){
+            $image = $this->widget('ext.SAImageDisplayer', array(
+                    'image' => $product->image,
+                    'group' => 'product',
+                    'size' => 'thumb',
+                    'title' => $product->name
+                ), true);
 
-        echo CHtml::link($image, array('product/view', 'id'=>$product->id), array(
-            'class' => 'thumbnail'
-        ));
+            echo CHtml::link($image, array('product/view', 'id'=>$product->id), array(
+                'class' => 'thumbnail'
+            ));
+        }
         echo CHtml::link($product->name, array('product/view', 'id'=>$product->id));
         ?>
     </li>
