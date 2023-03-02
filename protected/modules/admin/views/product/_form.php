@@ -1,6 +1,6 @@
 <?php Yii::app()->clientScript->registerCssFile('http://hayageek.github.io/jQuery-Upload-File/4.0.11/uploadfile.css'); ?>
 <?php Yii::app()->clientScript->registerScriptFile('http://hayageek.github.io/jQuery-Upload-File/4.0.11/jquery.uploadfile.min.js'); ?>
-<?php Yii::app()->clientScript->registerScriptFile(Yii::app()->baseUrl . "/js/admin/product.js"); ?>
+<?php Yii::app()->clientScript->registerScriptFile(Yii::app()->baseUrl . "/js/admin/product.js?v=1"); ?>
 
 <?php $form=$this->beginWidget('bootstrap.widgets.TbActiveForm',array(
 	'id'=>'product-form',
