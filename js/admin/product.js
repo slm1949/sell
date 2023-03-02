@@ -1,16 +1,14 @@
 $(function(){
-  $('#image_upload').uploadify({
-        swf  : SITE_URL+'/flash/uploadify.swf',
-        uploader    : SITE_URL+'/site/upload',
-        buttonText : '上传',
-        auto      : true,
-        multi     : false,
-        fileSizeLimit : '10MB',
-        fileTypeExts   : '*.jpg;*.jpeg;*.gif;*.png',
-        onUploadSuccess : function(file, response, data) {
-            if(response!='0'){
-                $('#Product_image').val(response);
-            }
+  $('#image_upload').uploadFile({
+        url    : SITE_URL+'/site/upload',
+        multiple:false,
+        dragDrop:true,
+        uploadStr : '上传',
+        fileName: 'Filedata',
+        acceptFiles:"image/*",
+        maxFileSize: 1000*1024,
+        onSuccess : function(files,data,xhr,pd) {
+          $('#Product_image').val(data);
         }
   });
 });
